@@ -60,3 +60,45 @@ The Event Viewer shows Sysmon Operational log already capturing **251 events (1.
 confirming that Sysmon is actively monitoring and logging system activity in real time.
 
 <img width="1014" height="791" alt="image" src="https://github.com/user-attachments/assets/0f2ca857-d9da-4e4e-a498-f3001440499e" />
+
+---
+
+**Ref 4 — Cassandra Configuration (cassandra.yaml)**
+
+Key settings configured in `/etc/cassandra/cassandra.yaml`:
+- **cluster_name** set to `ibrahim` to identify the Cassandra cluster
+- **listen_address** set to `192.168.1.13` for inter-node communication
+- **rpc_address** set to `192.168.1.13` to accept client connections from TheHive
+- **seeds** set to `192.168.1.13:7000` as the contact point for the cluster
+
+<img width="833" height="535" alt="image" src="https://github.com/user-attachments/assets/d42aa8d9-5b6c-4c6f-8702-343815063d51" />
+
+---
+
+**Ref 5 — Elasticsearch Configuration (elasticsearch.yml)**
+
+Key settings configured in `/etc/elasticsearch/elasticsearch.yml`:
+- **cluster.name** set to `ibrahim` to match the Cassandra cluster name
+- **node.name** set to `node-1` to identify this Elasticsearch node
+- **network.host** set to `192.168.1.13` to accept connections from TheHive
+- **http.port** set to `9200` for the REST API
+- **cluster.initial_master_nodes** set to `["node-1"]` to bootstrap the cluster
+
+<img width="833" height="269" alt="image" src="https://github.com/user-attachments/assets/731cadae-19e7-4b6b-91ad-532b3d926677" />
+
+---
+
+**Ref 6 — TheHive Configuration (application.conf)**
+
+Key settings configured in `/etc/thehive/application.conf`:
+- **storage backend** set to `cql` (Cassandra) with **hostname** `192.168.1.13`
+- **cluster-name** set to `ibrahim` to match the Cassandra cluster
+- **keyspace** set to `thehive`
+- **index backend** set to `elasticsearch` with **hostname** `192.168.1.13`
+- **index-name** set to `thehive`
+- **application.baseUrl** set to `http://192.168.1.13:9000` as the TheHive web interface URL
+
+<img width="833" height="269" alt="image" src="https://github.com/user-attachments/assets/346b75b6-4e7c-4afc-8ff4-91b85dd3bb1e" />
+
+---
+
