@@ -102,3 +102,6 @@ Key settings configured in `/etc/thehive/application.conf`:
 
 ---
 
+<img width="1869" height="892" alt="image" src="https://github.com/user-attachments/assets/eb59038d-27b7-43c6-8dd8-309c08e4292e" />
+
+
