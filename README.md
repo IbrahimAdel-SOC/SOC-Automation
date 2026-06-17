@@ -102,6 +102,16 @@ Key settings configured in `/etc/thehive/application.conf`:
 
 ---
 
+**Ref 7 — TheHive Organisation List**
+
+The TheHive web interface is accessible and running successfully, confirming the platform is fully operational after the Cassandra and Elasticsearch backends were configured.
+
+- **Organisation** — `admin` is listed as the default organisation with status **Active**
+- **Created by** — `TheHive system user`, indicating successful initial setup
+- **Created date** — `17/05/2026 20:20`
+- The interface loads correctly with no errors, confirming TheHive is reachable via its `application.baseUrl` and ready to receive alerts and cases from Shuffle
+
 <img width="1869" height="892" alt="image" src="https://github.com/user-attachments/assets/eb59038d-27b7-43c6-8dd8-309c08e4292e" />
 
+---
 
