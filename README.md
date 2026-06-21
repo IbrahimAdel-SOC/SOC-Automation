@@ -114,4 +114,7 @@ The TheHive web interface is accessible and running successfully, confirming the
 <img width="1869" height="892" alt="image" src="https://github.com/user-attachments/assets/eb59038d-27b7-43c6-8dd8-309c08e4292e" />
 
 ---
+<img width="1862" height="933" alt="image" src="https://github.com/user-attachments/assets/fef3ecb1-088b-400b-a0cc-12cff0e387c3" />
+
+<img width="1862" height="933" alt="image" src="https://github.com/user-attachments/assets/45363d60-076e-4d14-886a-7df641c0ffd9" />
 
