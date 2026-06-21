@@ -118,3 +118,12 @@ The TheHive web interface is accessible and running successfully, confirming the
 
 <img width="1862" height="933" alt="image" src="https://github.com/user-attachments/assets/45363d60-076e-4d14-886a-7df641c0ffd9" />
 
+<img width="1870" height="936" alt="image" src="https://github.com/user-attachments/assets/7ed16d6f-a43d-49e0-8a98-dec3e80756eb" />
+
+
+<img width="1870" height="936" alt="image" src="https://github.com/user-attachments/assets/d2b444f0-f84e-48a7-b5b5-c04b58544855" />
+
+<img width="1870" height="936" alt="image" src="https://github.com/user-attachments/assets/b2fb0db2-32ec-40d4-a5a5-9a2c33527801" />
+
+
+<img width="1870" height="936" alt="image" src="https://github.com/user-attachments/assets/1c7754f3-90e3-4ffa-b498-d0e6e0accc04" />
