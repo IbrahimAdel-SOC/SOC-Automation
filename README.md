@@ -114,6 +114,103 @@ The TheHive web interface is accessible and running successfully, confirming the
 <img width="1869" height="892" alt="image" src="https://github.com/user-attachments/assets/eb59038d-27b7-43c6-8dd8-309c08e4292e" />
 
 ---
+
+
+إليك وصف الـ 6 صور بنفس الفورمات:
+
+---
+
+**Ref 8 — TheHive SOC-Automation Organisation**
+
+A new organisation named `SOC-Automation` was created inside TheHive to isolate the lab environment from the default admin organisation.
+
+- **admin** — Active — Created by `TheHive system user` on `21/06/2026 07:51`
+- **SOC-Automation** — Active — Created by `Default admin user` on `21/06/2026 07:57`
+- Total organisations: **0 - 2 of 2**, confirming successful creation of the dedicated SOC lab organisation
+
+<img width="1862" height="933" alt="image" src="https://github.com/user-attachments/assets/fef3ecb1-088b-400b-a0cc-12cff0e387c3" />
+
+---
+
+**Ref 9 — TheHive SOC-Automation Users**
+
+Two analyst users were created inside the `SOC-Automation` organisation to handle alert triage and SOAR integration:
+
+- **ibrahim** (`ibrahim@test.com`) — Profile: `analyst` — Created: `21/06/2026 07:58`
+- **soar** (`soar@test.com`) — Profile: `analyst` — Created: `21/06/2026 07:58`, Updated: `21/06/2026 09:00`
+- Organisation description set to `Ibrahim-SOC-Automation`
+- Tasks and Observables sharing rules both set to `manual`
+
+<img width="1862" height="933" alt="image" src="https://github.com/user-attachments/assets/45363d60-076e-4d14-886a-7df641c0ffd9" />
+
+---
+
+**Ref 10 — TheHive Alert: Mimikatz Usage Detected**
+
+TheHive successfully received an automated alert forwarded from Shuffle triggered by a Wazuh detection rule:
+
+- **Alert Title** — `Mimikatz Usage Detected`
+- **Status** — `New` (received 9 minutes ago)
+- **Severity** — `H` (High)
+- **Source** — `WAZUH Alert`
+- **Type** — `internal`
+- **Reference** — `100002`
+- **Created** — `21/06/2026 10:34`
+
+This confirms the full SIEM → SOAR → Case Management pipeline is operational.
+
+<img width="1870" height="936" alt="image" src="https://github.com/user-attachments/assets/7ed16d6f-a43d-49e0-8a98-dec3e80756eb" />
+
+---
+
+**Ref 11 — Shuffle Workflow: Ibrahim-SOC-Automation**
+
+The automated SOC workflow built in Shuffle connects all pipeline components in the following sequence:
+
+- **Wazuh-alerts** (Webhook Trigger) → receives alerts from Wazuh Manager
+- **Hash** → extracts and processes the file hash from the alert
+- **Virustotal\_v3\_1** → enriches the hash IOC against VirusTotal threat intelligence
+- **TheHive 1** → creates an alert/case in TheHive with enriched data
+- **Email** (dashed line) → sends an email notification to the SOC analyst
+
+<img width="1870" height="936" alt="image" src="https://github.com/user-attachments/assets/d2b444f0-f84e-48a7-b5b5-c04b58544855" />
+
+---
+
+**Ref 12 — Shuffle Email Action Configuration**
+
+The Email node inside the `Ibrahim-SOC-Automation` workflow is configured to notify the SOC analyst automatically upon detection:
+
+- **Action** — `Send email shuffle`
+- **Recipients** — `ibrahimadel2057@gmail.com`
+- **Subject** — `Mimikatz Usage Detected`
+- **Body** includes dynamic fields populated from the Wazuh alert:
+  - `Alert Title: $exec.title`
+  - `Severity: $exec.severity`
+  - `Rule ID: $exec.rule_id`
+
+<img width="1870" height="936" alt="image" src="https://github.com/user-attachments/assets/b2fb0db2-32ec-40d4-a5a5-9a2c33527801" />
+
+---
+
+**Ref 13 — Gmail: Automated Alert Email Received**
+
+The SOC analyst email inbox received the automated alert notification sent by Shuffle, confirming the end-to-end pipeline is fully functional:
+
+- **Subject** — `Sent by email app: Mimikatz Usage Detected`
+- **Sender** — `Shuffle Email App <email-app@shuffler.io>`
+- **Received** — `10:50 AM` (0 minutes ago)
+- **Alert Title** — `Mimikatz Usage Detected`
+- **Severity** — `3`
+- **Rule ID** — `100002`
+- **Source** — `WAZUH Alert`
+- **Timestamp** — `2026-06-15T18:59:14.633+0000`
+- **Alert ID** — `1781549954.8396619`
+
+<img width="1870" height="936" alt="image" src="https://github.com/user-attachments/assets/1c7754f3-90e3-4ffa-b498-d0e6e0accc04" />
+
+---
+
 <img width="1862" height="933" alt="image" src="https://github.com/user-attachments/assets/fef3ecb1-088b-400b-a0cc-12cff0e387c3" />
 
 <img width="1862" height="933" alt="image" src="https://github.com/user-attachments/assets/45363d60-076e-4d14-886a-7df641c0ffd9" />
